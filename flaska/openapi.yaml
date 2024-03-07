@@ -88,7 +88,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Composition_VisitNote_ApiResponse_JSON'
+                $ref: '#/components/schemas/ApiResponse_JSON'
 
 
 
@@ -336,6 +336,117 @@ components:
           }
         ]
 
+    ApiResponse_JSON:
+      type: object
+      properties:
+        resourceType:
+          type: string
+        id:
+          type: string
+        meta:
+          type: object
+          properties:
+            versionId:
+              type: string
+            lastUpdated:
+              type: string
+            source:
+              type: string
+        language:
+          type: string
+        text:
+          type: object
+          properties:
+            status:
+              type: string
+            div:
+              type: string
+        status:
+          type: string
+        type:
+          type: object
+          properties:
+            coding:
+              type: object
+              properties:
+                system:
+                  type: string
+                code:
+                  type: string
+                display:
+                  type: string
+        subject:
+          type: object
+          properties:
+            reference:
+              type: string
+            display:
+              type: string
+        encounter:
+          type: object
+          properties:
+            reference:
+              type: string
+        date:
+          type: string
+        author:
+          type: object
+          properties:
+            reference:
+              type: string
+            display:
+              type: string
+        title:
+          type: string
+        confidentiality:
+          type: string
+        attester:
+          type: object
+          properties:
+            mode:
+              type: string
+            time:
+              type: string
+        custodian:
+          type: object
+          properties:
+            reference:
+              type: string
+            display:
+              type: string
+        section:
+          type: object
+          properties:
+            title:
+              type: string
+            code:
+              type: object
+              properties:
+                coding:
+                  type: object
+                  properties:
+                    system:
+                      type: string
+                    code:
+                      type: string
+                    display:
+                      type: string
+            text:
+              type: object
+              properties:
+                status:
+                  type: string
+                div:
+                  type: string
+            entry:
+              type: object
+              properties:
+                reference:
+                  type: string
+      example:
+        bundleId: b1f0dbbd-8446-46e5-97d2-4a74d2e4018a
+        message: Accepted
+        
 
   securitySchemes:
     wiadvance_auth:
